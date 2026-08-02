@@ -1,0 +1,8 @@
+[Desktop Entry]
+Type=Application
+Name=GeekType
+Comment=Fix text typed in the wrong keyboard layout
+Exec=AppRun
+Icon=geektype
+Categories=Utility;
+Terminal=false

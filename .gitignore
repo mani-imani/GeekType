@@ -1,0 +1,5 @@
+__pycache__/
+*.pyc
+*.log
+GeekType-x86_64.AppImage
+packaging/appimagetool.AppImage
