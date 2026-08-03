@@ -27,7 +27,7 @@ A lightweight, system-wide layout-fixer for Linux, inspired by LangOver. Select 
 ### نصب (اوبونتو / GNOME / Wayland)
 
 **روش ۱ — دانلود AppImage (ساده‌ترین راه):**
-از صفحه‌ی [Releases](../../releases) آخرین نسخه‌ی `GeekType-x86_64.AppImage` رو دانلود کن، بعد:
+از صفحه‌ی [Releases](https://github.com/mani-imani/GeekType/releases) آخرین نسخه‌ی `GeekType-x86_64.AppImage` رو دانلود کن، بعد:
 ```bash
 chmod +x GeekType-x86_64.AppImage
 ./GeekType-x86_64.AppImage --install
@@ -46,10 +46,10 @@ chmod +x setup.sh
 
 ### ساخت AppImage از سورس
 ```bash
-chmod +x build-appimage.sh
-./build-appimage.sh
+chmod +x packaging/build_appimage.sh
+./packaging/build_appimage.sh
 ```
-فایل نهایی توی `appimage/GeekType-x86_64.AppImage` ساخته می‌شه.
+فایل نهایی توی `GeekType-x86_64.AppImage` (ریشه‌ی پروژه) ساخته می‌شه.
 
 ### پیش‌نیازها
 اسکریپت `setup.sh` این‌ها رو خودکار نصب می‌کنه:
@@ -76,7 +76,7 @@ Every physical key produces a different character depending on the active layout
 ### Install (Ubuntu / GNOME / Wayland)
 
 **Option 1 — Download the AppImage (simplest):**
-Grab the latest `GeekType-x86_64.AppImage` from [Releases](../../releases), then:
+Grab the latest `GeekType-x86_64.AppImage` from [Releases](https://github.com/mani-imani/GeekType/releases), then:
 ```bash
 chmod +x GeekType-x86_64.AppImage
 ./GeekType-x86_64.AppImage --install
@@ -95,10 +95,10 @@ Either way, select any wrongly-typed text anywhere and press **F9**.
 
 ### Building the AppImage from source
 ```bash
-chmod +x build-appimage.sh
-./build-appimage.sh
+chmod +x packaging/build_appimage.sh
+./packaging/build_appimage.sh
 ```
-Produces `appimage/GeekType-x86_64.AppImage`.
+Produces `GeekType-x86_64.AppImage` in the project root.
 
 ### Requirements
 `setup.sh` installs these automatically:
