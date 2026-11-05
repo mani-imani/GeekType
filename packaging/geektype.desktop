@@ -1,0 +1,9 @@
+[Desktop Entry]
+Type=Application
+Name=GeekType
+Comment=Fix text typed in the wrong keyboard layout
+Comment[fa]=اصلاح متن تایپ‌شده با زبان اشتباه صفحه‌کلید
+Exec=AppRun --doctor
+Icon=geektype
+Categories=Utility;
+Terminal=true

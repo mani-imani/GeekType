@@ -1,0 +1,154 @@
+/* ============================================================================
+   geektype.css — GeekType product page, written on top of geek.css
+   Only --gm-* tokens. No hex colors, no new fonts, no new shadows or radii.
+   Logical properties only, so the same file serves fa (RTL) and en (LTR).
+   ========================================================================== */
+
+html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+body { overflow-x: hidden; }
+img, svg { max-width: 100%; }
+p { margin: 0 0 var(--gm-space-4); }
+ul { margin: 0; padding: 0; list-style: none; }
+
+.skip {
+  position: absolute; inset-inline-start: var(--gm-space-4); inset-block-start: -64px;
+  padding: var(--gm-space-2) var(--gm-space-4);
+  border-radius: var(--gm-radius-pill); background: var(--gm-accent); color: var(--gm-on-accent);
+  font-weight: 600; text-decoration: none; z-index: 10;
+}
+.skip:focus { inset-block-start: var(--gm-space-3); }
+
+/* icons (Bootstrap Icons, inlined, colored by the text around them) */
+.ico { width: 1.25em; height: 1.25em; flex: none; fill: currentColor; }
+
+/* header ----------------------------------------------------------------- */
+.top {
+  display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between;
+  gap: var(--gm-space-3) var(--gm-space-5);
+  padding-block: var(--gm-space-5);
+}
+.brand { display: inline-flex; align-items: center; gap: var(--gm-space-3); text-decoration: none; color: var(--gm-text); }
+.brand .gm-mark { --gm-mark-size: 40px; }
+.brand .wordmark { display: block; height: 26px; width: auto; }
+.top-tools { display: flex; flex-wrap: wrap; align-items: center; gap: var(--gm-space-3); }
+.lang-link {
+  padding: 6px 14px; border-radius: var(--gm-radius-pill);
+  color: var(--gm-muted); font-size: var(--gm-size-sm); font-weight: 600; text-decoration: none;
+}
+.lang-link:hover { background: var(--gm-chip); color: var(--gm-text); }
+
+/* wordmark follows the theme: the "dark" file has light letters */
+.brand .wm-dark { display: none; }
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) .brand .wm-light { display: none; }
+  :root:not([data-theme="light"]) .brand .wm-dark { display: block; }
+}
+:root[data-theme="dark"] .brand .wm-light { display: none; }
+:root[data-theme="dark"] .brand .wm-dark { display: block; }
+
+/* sections ---------------------------------------------------------------- */
+section { padding-block: var(--gm-space-8); }
+.eyebrow { margin: 0 0 var(--gm-space-3); color: var(--gm-muted); font-size: var(--gm-size-sm); font-weight: 600; }
+.lead { font-size: var(--gm-size-md); color: var(--gm-muted); }
+
+/* hero -------------------------------------------------------------------- */
+.hero { padding-block: var(--gm-space-7) var(--gm-space-8); }
+.hero h1 { margin-block-end: var(--gm-space-4); }
+.hero .lead { max-width: var(--gm-width-text); margin-block-end: var(--gm-space-5); }
+.actions { display: flex; flex-wrap: wrap; gap: var(--gm-space-3); margin-block-end: var(--gm-space-5); }
+.meta { display: flex; flex-wrap: wrap; align-items: center; gap: var(--gm-space-3) var(--gm-space-5); margin-block-end: var(--gm-space-6); }
+.hero .gm-term { max-width: 100%; }
+.hero .gm-term .out { color: var(--gm-text); }
+
+/* before / after demo ------------------------------------------------------ */
+.demo { display: grid; gap: var(--gm-space-4); margin-block-end: var(--gm-space-6); }
+.demo-row {
+  display: grid; grid-template-columns: 1fr auto 1fr; align-items: center; gap: var(--gm-space-4);
+}
+.demo-row > * { min-width: 0; }
+.demo-label { display: block; margin-block-end: var(--gm-space-1); color: var(--gm-muted); font-size: var(--gm-size-sm); }
+.demo-text { font-size: var(--gm-size-lg); font-weight: 700; overflow-wrap: anywhere; }
+.demo-arrow { color: var(--gm-accent); }
+.demo-card { padding: var(--gm-space-4) var(--gm-space-5); }
+@media (max-width: 520px) {
+  .demo-row { grid-template-columns: 1fr; gap: var(--gm-space-2); }
+  .demo-arrow { transform: rotate(90deg); justify-self: start; }
+}
+
+/* steps -------------------------------------------------------------------- */
+.steps { display: grid; gap: var(--gm-space-4); grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); counter-reset: step; }
+.step { position: relative; }
+.step-num {
+  display: inline-grid; place-items: center; width: 36px; height: 36px; margin-block-end: var(--gm-space-3);
+  border-radius: var(--gm-radius-pill); background: var(--gm-chip); color: var(--gm-accent);
+  font-weight: 800;
+}
+.step h3, .feature h3 { margin-block-end: var(--gm-space-2); }
+.step p, .feature p { margin: 0; color: var(--gm-muted); }
+.step kbd, .inline-kbd {
+  padding: 1px 8px; border: 1px solid var(--gm-line); border-radius: var(--gm-radius-sm);
+  background: var(--gm-surface); color: var(--gm-text); font-size: .9em;
+}
+
+/* features ----------------------------------------------------------------- */
+.features { display: grid; gap: var(--gm-space-4); grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); }
+.feature .ico { width: 28px; height: 28px; margin-block-end: var(--gm-space-3); color: var(--gm-accent); }
+
+/* install ------------------------------------------------------------------ */
+.install-grid { display: grid; gap: var(--gm-space-5); grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); align-items: start; }
+.install-grid > * { min-width: 0; }
+.install-card h3 { margin-block-end: var(--gm-space-3); }
+.install-card p { color: var(--gm-muted); }
+.code {
+  position: relative; margin: 0 0 var(--gm-space-4);
+  border: 1px solid var(--gm-line); border-radius: var(--gm-radius-sm); background: var(--gm-bg);
+}
+.code pre {
+  margin: 0; padding: var(--gm-space-3) 44px var(--gm-space-3) var(--gm-space-4);
+  overflow-x: auto; direction: ltr; text-align: left;
+  font-family: var(--gm-font-mono); font-size: 13px; line-height: 1.7; color: var(--gm-text);
+}
+.copy {
+  position: absolute; inset-block-start: 6px; right: 6px;
+  display: grid; place-items: center; width: 32px; height: 32px; padding: 0;
+  border: 0; border-radius: var(--gm-radius-pill);
+  background: transparent; color: var(--gm-muted); cursor: pointer;
+  transition: background var(--gm-time-hover) var(--gm-ease), color var(--gm-time-hover) var(--gm-ease);
+}
+.copy:hover { background: var(--gm-chip); color: var(--gm-text); }
+.copy[data-done="true"] { color: var(--gm-signal); }
+.copy .ico { width: 16px; height: 16px; }
+.note code, .facts code { font-size: .9em; }
+.note { margin: 0; font-size: var(--gm-size-sm); color: var(--gm-muted); }
+
+/* requirements + windows ---------------------------------------------------- */
+.split { display: grid; gap: var(--gm-space-5); grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); align-items: start; }
+.split > * { min-width: 0; }
+.facts li {
+  display: flex; align-items: flex-start; gap: var(--gm-space-3);
+  padding-block: var(--gm-space-3); border-block-end: 1px solid var(--gm-line);
+}
+.facts li:last-child { border-block-end: 0; }
+.facts .ico { margin-block-start: .2em; color: var(--gm-accent); }
+.chip-row { display: flex; flex-wrap: wrap; gap: var(--gm-space-2); margin-block-end: var(--gm-space-3); }
+
+/* footer ------------------------------------------------------------------- */
+.foot {
+  display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: var(--gm-space-3) var(--gm-space-5);
+  padding-block: var(--gm-space-6) var(--gm-space-7); border-block-start: 1px solid var(--gm-line);
+  color: var(--gm-muted); font-size: var(--gm-size-sm);
+}
+.foot a:not(.gm-sign) { color: var(--gm-muted); }
+.foot a:not(.gm-sign):hover { color: var(--gm-text); }
+.foot-links { display: flex; flex-wrap: wrap; gap: var(--gm-space-2) var(--gm-space-5); }
+
+/* motion: one soft entrance, only when the user has not asked for less ------ */
+@media (prefers-reduced-motion: no-preference) {
+  .reveal { animation: reveal var(--gm-time-enter) var(--gm-ease) both; }
+}
+@keyframes reveal { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: none; } }
+
+@media (max-width: 420px) {
+  section { padding-block: var(--gm-space-7); }
+  .gm-btn { padding-inline: 14px; }
+}
