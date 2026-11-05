@@ -1,9 +1,8 @@
 <p align="center">
-  <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="assets/wordmark/geektype-wordmark-dark.svg">
-    <img src="assets/wordmark/geektype-wordmark-light.svg" alt="GeekType" width="260">
-  </picture>
+  <img src="assets/icons/geektype-icon-128.png" width="96" height="96" alt="GeekType icon">
 </p>
+
+<h1 align="center">GeekType</h1>
 
 <p align="center" dir="rtl">ابزار لینوکسی که متنِ تایپ‌شده با زبان اشتباه صفحه‌کلید را با کلید <bdi>F9</bdi>، در هر برنامه‌ای، به فارسی یا انگلیسی درست تبدیل می‌کند.</p>
 <p align="center">A Linux tool that fixes text typed in the wrong keyboard layout, Persian or English, with the F9 key, in any app.</p>
